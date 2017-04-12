@@ -8,5 +8,8 @@ public class TinDogMain
 	{
 		String dog = new String();
 		//Does this work?
+		JFrame frame1 = new loginFrame();
+		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame1.setVisible(true);
 	}
 }
