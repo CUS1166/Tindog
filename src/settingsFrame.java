@@ -63,14 +63,13 @@ public class settingsFrame extends JFrame{
 		logout_listener = new Logout_Listener();
 		deleteaccount_listener = new DeleteAccount_Listener();
 		back_listener = new Back_Listener();
-		
+		createcosa();
 		Settings_About.addActionListener(about_listener);
 		Settings_EditAccount.addActionListener(edit_listener);
 		Settings_Logout.addActionListener(logout_listener);
 		Settings_DeleteAccount.addActionListener(deleteaccount_listener);
 		Settings_Back.addActionListener(back_listener);
 		
-		createcosa();
 		createPanel();
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	}
@@ -84,7 +83,7 @@ public class settingsFrame extends JFrame{
 		Settings_Logout = new JButton("Logout");
 		Settings_DeleteAccount = new JButton("Delete Account");
 		
-		Settings_Back = new JButton();
+		Settings_Back = new JButton("←");
 		
 		
 		
@@ -99,8 +98,9 @@ public class settingsFrame extends JFrame{
 		panel_center.add(Settings_Logout);
 		panel_center.add(Settings_DeleteAccount);
 		panel_north = new JPanel();
-		panel_north.add(Settings_Back);
-		panel_north.add(Settings_Settings);
+		panel_north.setLayout(new BorderLayout());
+		panel_north.add(Settings_Back, BorderLayout.WEST);
+		panel_north.add(Settings_Settings, BorderLayout.CENTER);
 		panel.add(panel_center, BorderLayout.CENTER);
 		panel.add(panel_north, BorderLayout.NORTH);
 		add(panel);
