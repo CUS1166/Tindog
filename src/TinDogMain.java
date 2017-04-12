@@ -11,5 +11,9 @@ public class TinDogMain
 		JFrame frame1 = new settingsFrame();
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame1.setVisible(true);
+		
+		JFrame frame2 = new loginFrame();
+		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame2.setVisible(true);
 	}
 }
