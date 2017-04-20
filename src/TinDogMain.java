@@ -6,6 +6,7 @@ public class TinDogMain
 {
 	public static void main(String[] args)
 	{
+		//ArrayList<Dog> DogQueue = new ArrayList<Dog>();
 		String dog = new String();
 		//Does this work?
 		JFrame frame1 = new FilterFrame();
