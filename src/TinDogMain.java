@@ -11,11 +11,9 @@ public class TinDogMain
 	private ActionListener login_listener;
 	public static void main(String[] args)
 	{
-<<<<<<< HEAD
-=======
+
 		//ArrayList<Dog> DogQueue = new ArrayList<Dog>();
-		String dog = new String();
->>>>>>> origin/master
+
 		//Does this work?
 		JFrame frameStartFrame = new StartFrame();
 		frameStartFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

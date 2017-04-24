@@ -10,6 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
+import java.awt.FlowLayout;
 
 public class ViewDoginMainFrame extends JFrame {
 
@@ -49,16 +50,7 @@ public class ViewDoginMainFrame extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		contentPane.add(panel_2, BorderLayout.SOUTH);
-		panel_2.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		JPanel panel_3 = new JPanel();
-		panel_2.add(panel_3);
-		
-		Component glue = Box.createGlue();
-		panel_3.add(glue);
-		
-		JButton btnNewButton = new JButton("✖");
-		panel_3.add(btnNewButton);
+		panel_2.setLayout(new GridLayout(2, 0, 0, 0));
 		
 		JPanel panel_4 = new JPanel();
 		panel_2.add(panel_4);
@@ -69,8 +61,25 @@ public class ViewDoginMainFrame extends JFrame {
 		JButton btnViewAdoptionInformation = new JButton("View Adoption Information");
 		panel_4.add(btnViewAdoptionInformation);
 		
+		JPanel panel_6 = new JPanel();
+		panel_2.add(panel_6);
+		panel_6.setLayout(new GridLayout(0, 2, 0, 0));
+		
+		JPanel panel_3 = new JPanel();
+		panel_6.add(panel_3);
+		FlowLayout flowLayout = (FlowLayout) panel_3.getLayout();
+		flowLayout.setAlignment(FlowLayout.LEFT);
+		
+		Component glue = Box.createGlue();
+		panel_3.add(glue);
+		
+		JButton btnNewButton = new JButton("✖");
+		panel_3.add(btnNewButton);
+		
 		JPanel panel_5 = new JPanel();
-		panel_2.add(panel_5);
+		FlowLayout flowLayout_1 = (FlowLayout) panel_5.getLayout();
+		flowLayout_1.setAlignment(FlowLayout.RIGHT);
+		panel_6.add(panel_5);
 		
 		Component glue_2 = Box.createGlue();
 		panel_5.add(glue_2);
