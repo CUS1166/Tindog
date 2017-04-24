@@ -5,7 +5,7 @@ public class Dog
 	private String dogName;
 	private int dogAge;
 	private String dogBreed;
-	private boolean male;
+	private int gender;
 	private String dogShelter;
 	private boolean dogStatus;
 	private String dogDescription;
@@ -17,7 +17,7 @@ public class Dog
 		dogName = "dog";
 		dogAge = 0;
 		dogBreed = "dog";
-		male = true;
+		gender = 0;
 		dogShelter = "dog";
 		dogStatus = true;
 		dogDescription = "dog";
@@ -51,13 +51,18 @@ public class Dog
 		return dogBreed;
 	}
 	
-	public void setGender(boolean male)
+	public void setGender(int gender)
 	{
-		this.male = male;
+		this.gender = gender;
 	}
-	public boolean getGender()
+	public String getGender()
 	{
-		return male;
+		if(gender == 0)
+		{
+			return "Female";
+		}
+		else
+		return "Male";
 	}
 	
 	public void setShelter(String shelter)

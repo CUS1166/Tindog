@@ -13,5 +13,15 @@ public class DogPile
 	public DogPile()
 	{
 		dogPile = new LinkedList<Dog>();
+		age1 = 0;
+		age2 = 100;
+		breed = "";
+		gender = 2;
+		shelter = "";
+	}
+	
+	public Queue<Dog> createPile()
+	{
+		return dogPile;
 	}
 }
