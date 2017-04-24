@@ -40,7 +40,10 @@ public class FilterFrame extends JFrame{
 	public FilterFrame(){
 		class Back_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-
+				JFrame frameDogListFrame = new DogListFrame();
+				close();
+				frameDogListFrame.setVisible(true);
+				frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}
 		}
 
@@ -48,7 +51,7 @@ public class FilterFrame extends JFrame{
 
 		createcosa();
 
-		//Filter_Back.addActionListener(back_listener);
+		Filter_Back.addActionListener(back_listener);
 
 		createpanel();
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
@@ -120,5 +123,8 @@ public class FilterFrame extends JFrame{
 		panel.add(panel_south, BorderLayout.SOUTH);
 		add(panel);
 
+	}
+	public void close(){
+		this.setVisible(false);
 	}
 }
