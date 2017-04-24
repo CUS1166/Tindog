@@ -64,6 +64,8 @@ public class FilterFrame extends JFrame{
 		//whether it should be just dog breeds or if it uses another thing to show what dog breed are available
 		Filter_Gender = new JLabel("Gender:");
 		Gender = new ButtonGroup();
+		Gender.add(Male);
+		Gender.add(Female);
 		Male = new JRadioButton("Male");
 		Female = new JRadioButton("Female");
 		Filter_Shelters = new JLabel("Shelter:");

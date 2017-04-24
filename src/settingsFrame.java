@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import java.awt.Component;
 
 public class settingsFrame extends JFrame{
 	
@@ -11,14 +12,10 @@ public class settingsFrame extends JFrame{
 	private static final int FRAME_WIDTH = 400;
 	private static final int FRAME_HEIGHT = 300;
 	
-	
-	private JLabel Settings_Settings;
-	
 	private JButton Settings_About;
 	private JButton Settings_EditAccount;
 	private JButton Settings_Logout;
 	private JButton Settings_DeleteAccount;
-	private JButton Settings_Back;
 	
 	private ActionListener about_listener;
 	private ActionListener edit_listener;
@@ -29,6 +26,10 @@ public class settingsFrame extends JFrame{
 	private JPanel panel;
 	private JPanel panel_north;
 	private JPanel panel_center;
+	private JButton button;
+	private JPanel panel_1;
+	private Component glue;
+	private JLabel lblSettings;
 	
 	public settingsFrame(){
 		class About_Listener implements ActionListener{
@@ -68,7 +69,6 @@ public class settingsFrame extends JFrame{
 		Settings_EditAccount.addActionListener(edit_listener);
 		Settings_Logout.addActionListener(logout_listener);
 		Settings_DeleteAccount.addActionListener(deleteaccount_listener);
-		Settings_Back.addActionListener(back_listener);
 		
 		createPanel();
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
@@ -76,14 +76,10 @@ public class settingsFrame extends JFrame{
 	
 	public void createcosa(){
 		
-		Settings_Settings = new JLabel("Settings");
-		
 		Settings_About = new JButton("About");
 		Settings_EditAccount = new JButton("Edit Account");
 		Settings_Logout = new JButton("Logout");
 		Settings_DeleteAccount = new JButton("Delete Account");
-		
-		Settings_Back = new JButton("←");
 		
 		
 		
@@ -99,10 +95,20 @@ public class settingsFrame extends JFrame{
 		panel_center.add(Settings_DeleteAccount);
 		panel_north = new JPanel();
 		panel_north.setLayout(new BorderLayout());
-		panel_north.add(Settings_Back, BorderLayout.WEST);
-		panel_north.add(Settings_Settings, BorderLayout.CENTER);
 		panel.add(panel_center, BorderLayout.CENTER);
 		panel.add(panel_north, BorderLayout.NORTH);
-		add(panel);
+		
+		button = new JButton("←");
+		panel_north.add(button, BorderLayout.WEST);
+		
+		panel_1 = new JPanel();
+		panel_north.add(panel_1, BorderLayout.CENTER);
+		
+		glue = Box.createGlue();
+		panel_1.add(glue);
+		
+		lblSettings = new JLabel("Settings");
+		panel_1.add(lblSettings);
+		getContentPane().add(panel);
 	}
 }
