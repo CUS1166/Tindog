@@ -7,21 +7,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.FlowLayout;
+import java.awt.Component;
+import javax.swing.Box;
 
 public class loginFrame extends JFrame{
 	private static final int FRAME_WIDTH = 400;
 	private static final int FRAME_HEIGHT = 300;
 	private static final int FIELD_WIDTH = 10;
-	private JLabel nameLabel;
-	private JTextField nameField;
-	private JLabel emailLabel;
-	private JTextField emailField;
-	private JLabel passwordLabel;
-	private JTextField passwordField;
-	private JLabel passwordConfirmLabel;
-	private JTextField passwordConfirmField;
-	private JLabel phoneLabel;
-	private JTextField phoneField;
 	private JButton cancelButton;
 	private JButton submitButton;
 	
@@ -29,8 +22,21 @@ public class loginFrame extends JFrame{
 	private ActionListener submitButtonListener;
 	
 	private JPanel panel;
-	private JPanel westPanel;
 	private JPanel southPanel;
+	private JPanel northPanel;
+	private JPanel panel_2;
+	private Component glue;
+	private JLabel lblEditAccount;
+	private JButton btnNewButton;
+	private JPanel centerPanel;
+	private JLabel lblNewLabel;
+	private JTextField textField;
+	private JLabel lblPassword;
+	private JTextField textField_1;
+	private JLabel lblRetypePassword;
+	private JTextField textField_2;
+	private JLabel lblPhoneNumber;
+	private JTextField textField_3;
 	
 	public loginFrame(){
 		class cancelListener implements ActionListener{
@@ -52,39 +58,68 @@ public class loginFrame extends JFrame{
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	}
 	public void createComponents(){
-		nameLabel = new JLabel("Name:");
-		nameField = new JTextField(FIELD_WIDTH);
-		emailLabel = new JLabel("Email:");
-		emailField = new JTextField(FIELD_WIDTH);
-		passwordLabel = new JLabel("Password:");
-		passwordField = new JTextField(FIELD_WIDTH);
-		passwordConfirmLabel = new JLabel("Password Confirmation:");
-		passwordConfirmField = new JTextField(FIELD_WIDTH);
-		phoneLabel = new JLabel("Phone Number:");
-		phoneField = new JTextField(FIELD_WIDTH);
 		cancelButton = new JButton("Cancel");
 		submitButton = new JButton("Submit");
 	}
 	public void createPanel(){
 		panel = new JPanel();
 		panel.setLayout(new BorderLayout());
-		westPanel = new JPanel();
-		westPanel.setLayout(new GridLayout(10,1));
 		southPanel = new JPanel();
-		westPanel.add(nameLabel);
-		westPanel.add(nameField);
-		westPanel.add(emailLabel);
-		westPanel.add(emailField);
-		westPanel.add(passwordLabel);
-		westPanel.add(passwordField);
-		westPanel.add(passwordConfirmLabel);
-		westPanel.add(passwordConfirmField);
-		westPanel.add(phoneLabel);
-		westPanel.add(phoneField);
-		panel.add(westPanel, BorderLayout.CENTER);
 		southPanel.add(cancelButton);
 		southPanel.add(submitButton);
 		panel.add(southPanel, BorderLayout.SOUTH);
-		add(panel);
+		getContentPane().add(panel);
+		
+		northPanel = new JPanel();
+		panel.add(northPanel, BorderLayout.NORTH);
+		northPanel.setLayout(new BorderLayout(0, 0));
+		
+		panel_2 = new JPanel();
+		northPanel.add(panel_2, BorderLayout.CENTER);
+		
+		glue = Box.createGlue();
+		panel_2.add(glue);
+		
+		lblEditAccount = new JLabel("Edit Account");
+		panel_2.add(lblEditAccount);
+		
+		btnNewButton = new JButton("<--");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		northPanel.add(btnNewButton, BorderLayout.WEST);
+		
+		centerPanel = new JPanel();
+		panel.add(centerPanel, BorderLayout.CENTER);
+		centerPanel.setLayout(new GridLayout(8, 1, 0, 0));
+		
+		lblNewLabel = new JLabel("Name: ");
+		centerPanel.add(lblNewLabel);
+		
+		textField = new JTextField();
+		centerPanel.add(textField);
+		textField.setColumns(10);
+		
+		lblPassword = new JLabel("Password:");
+		centerPanel.add(lblPassword);
+		
+		textField_1 = new JTextField();
+		centerPanel.add(textField_1);
+		textField_1.setColumns(10);
+		
+		lblRetypePassword = new JLabel("Re-type Password:");
+		centerPanel.add(lblRetypePassword);
+		
+		textField_2 = new JTextField();
+		centerPanel.add(textField_2);
+		textField_2.setColumns(10);
+		
+		lblPhoneNumber = new JLabel("Phone Number");
+		centerPanel.add(lblPhoneNumber);
+		
+		textField_3 = new JTextField();
+		centerPanel.add(textField_3);
+		textField_3.setColumns(10);
 	}
 }
