@@ -2,6 +2,8 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -11,14 +13,25 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
 import java.awt.FlowLayout;
+import javax.swing.SwingConstants;
 
 public class ViewDoginMainFrame extends JFrame {
 
 	private JPanel contentPane;
+	private ActionListener backbtnListener;
 	/**
 	 * Create the frame.
 	 */
 	public ViewDoginMainFrame() {
+		class backListener implements ActionListener{
+			public void actionPerformed(ActionEvent e){
+				JFrame frameDogListFrame = new DogListFrame();
+				close();
+				frameDogListFrame.setVisible(true);
+				frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			}
+		}
+		backbtnListener = new backListener();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -30,26 +43,47 @@ public class ViewDoginMainFrame extends JFrame {
 		contentPane.add(panel, BorderLayout.NORTH);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		JLabel lblNewLabel = new JLabel(""); /*Image file here*/
-		panel.add(lblNewLabel);
+		JPanel panel_7 = new JPanel();
+		panel.add(panel_7);
+		FlowLayout flowLayout_2 = (FlowLayout) panel_7.getLayout();
+		flowLayout_2.setAlignment(FlowLayout.LEFT);
 		
-		JLabel lblNewLabel_1 = new JLabel("Name" + "");/*Name of Dog here*/
-		panel.add(lblNewLabel_1);
+		JButton button = new JButton("<--");
+		panel_7.add(button);
+		button.addActionListener(backbtnListener);
 		
-		JLabel lblNewLabel_3 = new JLabel("Breed" + "");/*Breed of Dog here*/
-		panel.add(lblNewLabel_3);
+		JPanel panel_10 = new JPanel();
+		contentPane.add(panel_10, BorderLayout.CENTER);
+		panel_10.setLayout(new BorderLayout(0, 0));
 		
-		JLabel lblNewLabel_2 = new JLabel("Location" + "");/*Location of Dog here*/
-		panel.add(lblNewLabel_2);
+		JPanel panel_8 = new JPanel();
+		panel_10.add(panel_8, BorderLayout.NORTH);
+		panel_8.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JLabel lblNewLabel = new JLabel("");
+		panel_8.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Name" + "");
+		panel_8.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_3 = new JLabel("Breed" + "");
+		panel_8.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_2 = new JLabel("Location" + "");
+		panel_8.add(lblNewLabel_2);
 		
 		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1, BorderLayout.CENTER);
+		panel_10.add(panel_1);
 		
-		JTextArea textArea = new JTextArea();/*Info of Dog here*/
+		JTextArea textArea = new JTextArea();
 		panel_1.add(textArea);
 		
+		JPanel panel_9 = new JPanel();
+		contentPane.add(panel_9, BorderLayout.SOUTH);
+		panel_9.setLayout(new BorderLayout(0, 0));
+		
 		JPanel panel_2 = new JPanel();
-		contentPane.add(panel_2, BorderLayout.SOUTH);
+		panel_9.add(panel_2, BorderLayout.SOUTH);
 		panel_2.setLayout(new GridLayout(2, 0, 0, 0));
 		
 		JPanel panel_4 = new JPanel();
@@ -87,5 +121,7 @@ public class ViewDoginMainFrame extends JFrame {
 		JButton btnNewButton_1 = new JButton("✔");
 		panel_5.add(btnNewButton_1);
 	}
-
+	public void close(){
+		this.setVisible(false);
+	}
 }

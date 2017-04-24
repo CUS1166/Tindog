@@ -10,6 +10,8 @@ import javax.swing.JTextArea;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
+import java.awt.FlowLayout;
 
 public class ViewDoginDoggieBag extends JFrame {
 
@@ -25,8 +27,12 @@ public class ViewDoginDoggieBag extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
+		JPanel panel_7 = new JPanel();
+		contentPane.add(panel_7, BorderLayout.CENTER);
+		panel_7.setLayout(new BorderLayout(0, 0));
+		
 		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.NORTH);
+		panel_7.add(panel, BorderLayout.NORTH);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JLabel lblNewLabel = new JLabel(""); /*Image file here*/
@@ -42,7 +48,7 @@ public class ViewDoginDoggieBag extends JFrame {
 		panel.add(lblNewLabel_2);
 		
 		JPanel panel_1 = new JPanel();
-		contentPane.add(panel_1, BorderLayout.CENTER);
+		panel_7.add(panel_1);
 		
 		JTextArea textArea = new JTextArea();/*Info of Dog here*/
 		panel_1.add(textArea);
@@ -77,6 +83,18 @@ public class ViewDoginDoggieBag extends JFrame {
 		
 		JButton btnNewButton_1 = new JButton("View Adoption Information");
 		panel_5.add(btnNewButton_1);
+		
+		JPanel panel_6 = new JPanel();
+		contentPane.add(panel_6, BorderLayout.NORTH);
+		panel_6.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JPanel panel_8 = new JPanel();
+		FlowLayout flowLayout = (FlowLayout) panel_8.getLayout();
+		flowLayout.setAlignment(FlowLayout.LEFT);
+		panel_6.add(panel_8);
+		
+		JButton button = new JButton("<--");
+		panel_8.add(button);
 	}
 
 }
