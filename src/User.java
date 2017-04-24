@@ -9,4 +9,9 @@ public class User
 	{
 		db = new DoggieBag();
 	}
+	
+	public void addDog(Dog d)
+	{
+		db.add(d);
+	}
 }
