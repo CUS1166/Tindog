@@ -16,16 +16,16 @@ public class TinDogMain
 		//ArrayList<Dog> DogQueue = new ArrayList<Dog>();
 
 		//Does this work?
-<<<<<<< HEAD
+
 	/*	JFrame frame1 = new FilterFrame();
 		frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame1.setVisible(true);*/
 		
-=======
+
 		JFrame frameStartFrame = new StartFrame();
 		frameStartFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameStartFrame.setVisible(true);
->>>>>>> origin/master
+
 		/*JFrame frame2 = new loginFrame();
 		frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame2.setVisible(true);*/

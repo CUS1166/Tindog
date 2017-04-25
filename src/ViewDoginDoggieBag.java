@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import java.awt.Component;
 import javax.swing.Box;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
@@ -72,7 +73,7 @@ public class ViewDoginDoggieBag extends JFrame {
 		Component glue_1 = Box.createGlue();
 		panel_4.add(glue_1);
 		
-		JLabel lblTindogLogo = new JLabel("TinDog logo");
+		JLabel lblTindogLogo = new JLabel(new ImageIcon("C:\\Users\\jde674\\Documents\\GitHub\\Tindog\\TinDog Logo.png"));
 		panel_4.add(lblTindogLogo);
 		
 		JPanel panel_5 = new JPanel();
