@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.awt.Component;
 
 public class FilterFrame extends JFrame{
 
@@ -25,6 +26,7 @@ public class FilterFrame extends JFrame{
 	//Tindog Logo
 
 	private ActionListener back_listener;
+	private ActionListener enterbtnListener;
 
 	private JPanel panel;
 	private JPanel panel_north;
@@ -36,29 +38,42 @@ public class FilterFrame extends JFrame{
 	private JPanel panel_breed;
 	private JPanel panel_gender;
 	private JPanel panel_shelters;
+	private JButton btnFilter;
+	private Component horizontalStrut;
+	private JPanel panel_1;
 
 	public FilterFrame(){
 		class Back_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				JFrame frameDogListFrame = new DogListFrame();
-				close();
-				frameDogListFrame.setVisible(true);
-				frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				listenerCode();
 			}
 		}
-
+		class EnterListener implements ActionListener{
+			public void actionPerformed(ActionEvent e){
+				yage.getText(); //get min age
+				oage.getText(); //get max age
+				Breed.getSelectedItem(); //get breed
+				if(Male.isSelected()){ //male
+					
+				}
+				else if(Female.isSelected()){ //female
+					
+				}
+				Shelters.getSelectedItem(); //get shelter
+				listenerCode();
+			}
+		}
 		back_listener = new Back_Listener();
-
+		enterbtnListener = new EnterListener();
 		createcosa();
 
 		Filter_Back.addActionListener(back_listener);
-
 		createpanel();
+		btnFilter.addActionListener(enterbtnListener);
+		
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
 	}
 	public void createcosa(){
-
-		Filter_FILTER = new JLabel("FILTER");
 		Filter_Age = new JLabel("Age:");
 		Filter_To = new JLabel("to");
 		Filter_Breed = new JLabel("Breed:");
@@ -91,6 +106,9 @@ public class FilterFrame extends JFrame{
 		panel_age.setLayout(new GridLayout(1,4));
 		panel_age.add(Filter_Age);
 		panel_age.add(yage);
+		
+		horizontalStrut = Box.createHorizontalStrut(20);
+		panel_age.add(horizontalStrut);
 		panel_age.add(Filter_To);
 		panel_age.add(oage);
 		panel_breed = new JPanel();
@@ -108,7 +126,12 @@ public class FilterFrame extends JFrame{
 		panel_shelters.add(Shelters);
 
 		panel_north.add(Filter_Back, BorderLayout.WEST);
-		panel_north.add(Filter_FILTER, BorderLayout.CENTER);
+		
+		panel_1 = new JPanel();
+		panel_north.add(panel_1, BorderLayout.CENTER);
+		
+				Filter_FILTER = new JLabel("FILTER");
+				panel_1.add(Filter_FILTER);
 		panel_center.add(panel_F);
 		panel_center.add(panel_age);
 		panel_center.add(panel_breed);
@@ -121,10 +144,19 @@ public class FilterFrame extends JFrame{
 		panel.add(panel_north, BorderLayout.NORTH);
 		panel.add(panel_center, BorderLayout.CENTER);
 		panel.add(panel_south, BorderLayout.SOUTH);
-		add(panel);
+		
+		btnFilter = new JButton("Filter");
+		panel_south.add(btnFilter);
+		getContentPane().add(panel);
 
 	}
 	public void close(){
 		this.setVisible(false);
+	}
+	public void listenerCode(){
+		JFrame frameDogListFrame = new DogListFrame();
+		close();
+		frameDogListFrame.setVisible(true);
+		frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
