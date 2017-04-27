@@ -8,6 +8,13 @@ import javax.swing.*;
 public class settingsFrame extends JFrame{
 	
 	
+<<<<<<< HEAD
+=======
+	private static final int FRAME_WIDTH = 400;
+	private static final int FRAME_HEIGHT = 300;
+	
+	
+>>>>>>> origin/master
 	private JLabel Settings_Settings;
 	
 	private JButton Settings_About;
@@ -59,16 +66,25 @@ public class settingsFrame extends JFrame{
 		logout_listener = new Logout_Listener();
 		deleteaccount_listener = new DeleteAccount_Listener();
 		back_listener = new Back_Listener();
+<<<<<<< HEAD
 		
+=======
+		createcosa();
+>>>>>>> origin/master
 		Settings_About.addActionListener(about_listener);
 		Settings_EditAccount.addActionListener(edit_listener);
 		Settings_Logout.addActionListener(logout_listener);
 		Settings_DeleteAccount.addActionListener(deleteaccount_listener);
 		Settings_Back.addActionListener(back_listener);
 		
+<<<<<<< HEAD
 		createcosa();
 		createPanel();
 		
+=======
+		createPanel();
+		setSize(FRAME_WIDTH, FRAME_HEIGHT);
+>>>>>>> origin/master
 	}
 	
 	public void createcosa(){
@@ -80,7 +96,11 @@ public class settingsFrame extends JFrame{
 		Settings_Logout = new JButton("Logout");
 		Settings_DeleteAccount = new JButton("Delete Account");
 		
+<<<<<<< HEAD
 		Settings_Back = new JButton();
+=======
+		Settings_Back = new JButton("←");
+>>>>>>> origin/master
 		
 		
 		
@@ -95,8 +115,14 @@ public class settingsFrame extends JFrame{
 		panel_center.add(Settings_Logout);
 		panel_center.add(Settings_DeleteAccount);
 		panel_north = new JPanel();
+<<<<<<< HEAD
 		panel_north.add(Settings_Back);
 		panel_north.add(Settings_Settings);
+=======
+		panel_north.setLayout(new BorderLayout());
+		panel_north.add(Settings_Back, BorderLayout.WEST);
+		panel_north.add(Settings_Settings, BorderLayout.CENTER);
+>>>>>>> origin/master
 		panel.add(panel_center, BorderLayout.CENTER);
 		panel.add(panel_north, BorderLayout.NORTH);
 		add(panel);
