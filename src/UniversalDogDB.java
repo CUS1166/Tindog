@@ -9,11 +9,11 @@ public class UniversalDogDB
 	public Connection con;
 	public Statement s;
 	public ResultSet rs;
-	public void connect (String q)
+	public void retrieveData (String q)
 	{
 		query = q;
 		try{
-			con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/jpsun/Google Drive/Class Documents/CUS 1166/DogDatabase.accdb");
+			con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/jpsun/Google Drive/Class Documents/CUS 1166/DogDatabase2.accdb");
 			s = con.createStatement();
 			s.execute(query);
 			rs = s.getResultSet();
@@ -28,7 +28,24 @@ public class UniversalDogDB
                 try{con.close();}catch(Exception e){e.printStackTrace();}
         }
 	}
-	
+	public void sendData (String q)
+	{
+		query = q;
+		try{
+			con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/jpsun/Google Drive/Class Documents/CUS 1166/DogDatabase2.accdb");
+			s = con.createStatement();
+			s.executeUpdate(query);
+			s.close();
+		}
+		catch (Exception e){
+		
+			System.out.println(e);
+		}
+		finally{
+            if(con != null)
+                try{con.close();}catch(Exception e){e.printStackTrace();}
+        }
+	}
 	public ResultSet getResultSet()
 	{
 		return rs;
