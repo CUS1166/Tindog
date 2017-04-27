@@ -2,20 +2,25 @@ import java.util.*;
 
 public class DoggieBag
 {
-	public ArrayList<Dog> sack;
+	public ArrayList<Dog> DogBag;
 	
 	public DoggieBag()
 	{
-		sack = new ArrayList<Dog>();
+		DogBag = new ArrayList<Dog>();
 	}
 	
-	public ArrayList<Dog> getSack()
+	public ArrayList<Dog> getDoggieBag()
 	{
-		return sack;
+		return DogBag;
 	}
 	
-	public void add(Dog d)
+	public void addDog(Dog d)
 	{
-		sack.add(d);
+		DogBag.add(d);
+	}
+	
+	public void deleteDog(Dog d)
+	{
+		DogBag.remove(d);
 	}
 }

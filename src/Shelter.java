@@ -1,21 +1,19 @@
 
-import java.util.*;
-
-public class User
+public class Shelter
 {
-	private DoggieBag db;
 	private String name;
-	private String email;
+	private String address;
 	private String phone;
-	private String password;
+	private String email;
+	private String link;
 	
-	public User()
+	public Shelter()
 	{
-		db = new DoggieBag();
-		name = "User";
-		email = "User";
-		phone = "User";
-		password = "User";
+		name = "";
+		address = "";
+		phone = "";
+		email = "";
+		link = "";
 	}
 	
 	public void setName(String name)
@@ -25,6 +23,15 @@ public class User
 	public String getName()
 	{
 		return name;
+	}
+	
+	public void setAddress(String address)
+	{
+		this.address = address;
+	}
+	public String getAddress()
+	{
+		return address;
 	}
 	
 	public void setEmail(String email)
@@ -45,17 +52,12 @@ public class User
 		return phone;
 	}
 	
-	public void setPassword(String password)
+	public void setLink(String link)
 	{
-		this.password = password;
+		this.link = link;
 	}
-	public String getPassword()
+	public String getLink()
 	{
-		return password;
-	}
-	
-	public void addDog(Dog d)
-	{
-		db.addDog(d);
+		return link;
 	}
 }
