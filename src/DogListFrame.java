@@ -7,6 +7,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.swing.JButton;
 import java.awt.Component;
@@ -20,8 +22,14 @@ public class DogListFrame extends JFrame {
 	private ActionListener mainMenubtnListener;
 	private ActionListener filterbtnListener;
 	private ActionListener viewInfobtnListener;
-	public DogListFrame() {
+	public DogListFrame() throws MalformedURLException {
 		
+		@SuppressWarnings("unused")
+		class fakeListener implements ActionListener{
+			public void actionPerformed(ActionEvent e){
+				
+			}
+		}
 		class mainMenuListener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
 				JFrame frameMainMenuFrame = new MainFrame();
@@ -108,7 +116,9 @@ public class DogListFrame extends JFrame {
 		JPanel panel_8 = new JPanel();
 		panel_2.add(panel_8);
 		
-		JLabel lblNewLabel_1 = new JLabel();
+		
+		URL photo = new URL("https://barkpost-assets.s3.amazonaws.com/wp-content/uploads/2013/11/grumpy-dog-11.jpg");
+		JLabel lblNewLabel_1 = new JLabel(new ImageIcon(photo));
 		panel_8.add(lblNewLabel_1);
 		
 		JPanel panel_9 = new JPanel();
