@@ -32,9 +32,10 @@ public class UniversalDogDB
 	{
 		query = q;
 		try{
-			con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/jpsun/Google Drive/Class Documents/CUS 1166/DogDatabase2.accdb");
+			//con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/jpsun/Google Drive/Class Documents/CUS 1166/DogDatabase2.accdb");
+			con = DriverManager.getConnection("jdbc:ucanaccess://F:/OneDrive - SJU/OneDrive - St. John's University/School/Spring 2017/CUS 1166/Project/DogDatabase Test.accdb");
 			s = con.createStatement();
-			s.executeUpdate(query);
+			s.execute(query);
 			s.close();
 		}
 		catch (Exception e){

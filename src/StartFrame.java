@@ -1,5 +1,5 @@
 import javax.swing.*;
-
+import java.sql.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
@@ -39,10 +39,36 @@ public class StartFrame extends JFrame{
 		}
 		class Login_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
+				
+				if (Start_Username.getText().equals(null) || Start_Password.getText().equals(null))
+				{
+					
+				}
+				else
+				{
+					try{
+					UniversalDogDB dogDB=new UniversalDogDB();
+					String query = "select USER_Email from USER where USER_Email = " + Start_Username.getText() + ";";
+					dogDB.retrieveData(query);
+					ResultSet result = dogDB.getResultSet();
+					
+					System.out.println(result.getString(1));
+					
+					}
+					catch(Exception d){
+						d.printStackTrace();
+					}
+					/*query = "select USER_Password from USER where USER_Password = " + Start_Password.getText() + ";";
+					dogDB.retrieveData(query);
+					result = dogDB.getResultSet();*/
+				}
+				
+				
 				JFrame frameDogListFrame = new DogListFrame();
 				close();
 				frameDogListFrame.setVisible(true);
 				frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
 			}
 		}
 		
