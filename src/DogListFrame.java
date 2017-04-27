@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import java.awt.Component;
 import javax.swing.Box;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class DogListFrame extends JFrame {
@@ -91,7 +92,7 @@ public class DogListFrame extends JFrame {
 		JPanel panel_6 = new JPanel();
 		panel_1.add(panel_6);
 		
-		JLabel lblNewLabel = new JLabel("New label");//TinDog logo
+		JLabel lblNewLabel = new JLabel(new ImageIcon("C:\\Users\\jde674\\Documents\\GitHub\\Tindog\\TinDog Logo.png"));//TinDog logo
 		panel_6.add(lblNewLabel);
 		
 		JPanel panel_7 = new JPanel();
@@ -107,7 +108,7 @@ public class DogListFrame extends JFrame {
 		JPanel panel_8 = new JPanel();
 		panel_2.add(panel_8);
 		
-		JLabel lblNewLabel_1 = new JLabel("New label");
+		JLabel lblNewLabel_1 = new JLabel();
 		panel_8.add(lblNewLabel_1);
 		
 		JPanel panel_9 = new JPanel();
