@@ -36,6 +36,7 @@ public class DogPile
 			if(filter)
 			{
 				//if any of the dog's values do not fit the filter it is removed
+				dogPile.remove(d);
 			}
 			
 		}
