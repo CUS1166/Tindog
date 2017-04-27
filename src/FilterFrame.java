@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.net.MalformedURLException;
 import java.awt.Component;
 
 public class FilterFrame extends JFrame{
@@ -45,7 +46,11 @@ public class FilterFrame extends JFrame{
 	public FilterFrame(){
 		class Back_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				listenerCode();
+				try {
+					listenerCode();
+				} catch (MalformedURLException e1) {
+					e1.printStackTrace();
+				}
 			}
 		}
 		class EnterListener implements ActionListener{
@@ -60,7 +65,11 @@ public class FilterFrame extends JFrame{
 					
 				}
 				Shelters.getSelectedItem(); //get shelter
-				listenerCode();
+				try {
+					listenerCode();
+				} catch (MalformedURLException e1) {
+					e1.printStackTrace();
+				}
 			}
 		}
 		back_listener = new Back_Listener();
@@ -153,7 +162,7 @@ public class FilterFrame extends JFrame{
 	public void close(){
 		this.setVisible(false);
 	}
-	public void listenerCode(){
+	public void listenerCode() throws MalformedURLException{
 		JFrame frameDogListFrame = new DogListFrame();
 		close();
 		frameDogListFrame.setVisible(true);

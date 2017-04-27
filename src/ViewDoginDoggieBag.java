@@ -1,3 +1,6 @@
+
+
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -97,5 +100,6 @@ public class ViewDoginDoggieBag extends JFrame {
 		JButton button = new JButton("<--");
 		panel_8.add(button);
 	}
+
 
 }

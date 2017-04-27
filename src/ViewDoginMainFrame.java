@@ -1,9 +1,13 @@
+
+
+	
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
 
 import javax.swing.Box;
 import javax.swing.JButton;
@@ -25,10 +29,17 @@ public class ViewDoginMainFrame extends JFrame {
 	public ViewDoginMainFrame() {
 		class backListener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				JFrame frameDogListFrame = new DogListFrame();
+				JFrame frameDogListFrame;
+				try {
+					frameDogListFrame = new DogListFrame();
+					frameDogListFrame.setVisible(true);
+					frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				close();
-				frameDogListFrame.setVisible(true);
-				frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
 			}
 		}
 		backbtnListener = new backListener();
@@ -124,4 +135,5 @@ public class ViewDoginMainFrame extends JFrame {
 	public void close(){
 		this.setVisible(false);
 	}
+
 }

@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+public class User {
+
+=======
 import java.util.*;
 
 public class User
@@ -58,4 +62,5 @@ public class User
 	{
 		db.addDog(d);
 	}
+>>>>>>> origin/master
 }

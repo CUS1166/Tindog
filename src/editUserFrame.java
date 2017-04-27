@@ -41,13 +41,19 @@ public class editUserFrame extends JFrame{
 	public editUserFrame(){
 		class cancelListener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				
+				JFrame frameSettingsFrame = new settingsFrame();
+				frameSettingsFrame.setVisible(true);
 			}
 		}
-		class submitListener implements ActionListener{
+		class submitListener implements ActionListener{ //needs to take data
 			public void actionPerformed(ActionEvent e){
+<<<<<<< HEAD:src/editUserFrame.java
 				
 		
+=======
+				JFrame frameSettingsFrame = new settingsFrame();
+				frameSettingsFrame.setVisible(true);
+>>>>>>> origin/master:src/loginFrame.java
 			}
 		}
 		createComponents();
@@ -122,5 +128,8 @@ public class editUserFrame extends JFrame{
 		textField_3 = new JTextField();
 		centerPanel.add(textField_3);
 		textField_3.setColumns(10);
+	}
+	public void close(){
+		this.setVisible(false);
 	}
 }

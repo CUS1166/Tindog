@@ -9,13 +9,19 @@ import java.awt.Component;
 public class settingsFrame extends JFrame{
 	
 	
+
 	private static final int FRAME_WIDTH = 400;
 	private static final int FRAME_HEIGHT = 300;
 	
+
+	private JLabel Settings_Settings;
+	
+
 	private JButton Settings_About;
 	private JButton Settings_EditAccount;
 	private JButton Settings_Logout;
 	private JButton Settings_DeleteAccount;
+	private JButton Settings_Back;
 	
 	private ActionListener about_listener;
 	private ActionListener edit_listener;
@@ -39,7 +45,9 @@ public class settingsFrame extends JFrame{
 		}
 		class Edit_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				
+				JFrame frameLoginFrame = new loginFrame();
+				close();
+				frameLoginFrame.setVisible(true);
 			}
 		}
 		class Logout_Listener implements ActionListener{
@@ -64,14 +72,22 @@ public class settingsFrame extends JFrame{
 		logout_listener = new Logout_Listener();
 		deleteaccount_listener = new DeleteAccount_Listener();
 		back_listener = new Back_Listener();
+
 		createcosa();
+
 		Settings_About.addActionListener(about_listener);
 		Settings_EditAccount.addActionListener(edit_listener);
 		Settings_Logout.addActionListener(logout_listener);
 		Settings_DeleteAccount.addActionListener(deleteaccount_listener);
 		
+
+		createcosa();
+		createPanel();
+		
+
 		createPanel();
 		setSize(FRAME_WIDTH, FRAME_HEIGHT);
+
 	}
 	
 	public void createcosa(){
@@ -81,6 +97,11 @@ public class settingsFrame extends JFrame{
 		Settings_Logout = new JButton("Logout");
 		Settings_DeleteAccount = new JButton("Delete Account");
 		
+
+		Settings_Back = new JButton();
+
+		
+
 		
 		
 	}
@@ -94,7 +115,11 @@ public class settingsFrame extends JFrame{
 		panel_center.add(Settings_Logout);
 		panel_center.add(Settings_DeleteAccount);
 		panel_north = new JPanel();
+		panel_north.add(Settings_Settings);
+
 		panel_north.setLayout(new BorderLayout());
+		panel_north.add(Settings_Settings, BorderLayout.CENTER);
+
 		panel.add(panel_center, BorderLayout.CENTER);
 		panel.add(panel_north, BorderLayout.NORTH);
 		
@@ -110,5 +135,8 @@ public class settingsFrame extends JFrame{
 		lblSettings = new JLabel("Settings");
 		panel_1.add(lblSettings);
 		getContentPane().add(panel);
+	}
+	public void close(){
+		this.setVisible(false);
 	}
 }
