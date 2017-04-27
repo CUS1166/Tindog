@@ -35,7 +35,10 @@ public class NewUserFrame extends JFrame{
 	public NewUserFrame(){
 		class cancelListener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				
+				JFrame frameStartFrame = new StartFrame();
+				close();
+				frameStartFrame.setVisible(true);
+				frameStartFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}
 		}
 		class submitListener implements ActionListener{
@@ -86,5 +89,8 @@ public class NewUserFrame extends JFrame{
 		southPanel.add(submitButton);
 		panel.add(southPanel, BorderLayout.SOUTH);
 		add(panel);
+	}
+	public void close(){
+		this.setVisible(false);
 	}
 }
