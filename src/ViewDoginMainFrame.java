@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 
-public class ViewDoginMainFrame {
 
-=======
+	
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.EventQueue;
@@ -137,5 +135,5 @@ public class ViewDoginMainFrame extends JFrame {
 	public void close(){
 		this.setVisible(false);
 	}
->>>>>>> origin/master
+
 }
