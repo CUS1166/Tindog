@@ -41,12 +41,14 @@ public class loginFrame extends JFrame{
 	public loginFrame(){
 		class cancelListener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				
+				JFrame frameSettingsFrame = new settingsFrame();
+				frameSettingsFrame.setVisible(true);
 			}
 		}
-		class submitListener implements ActionListener{
+		class submitListener implements ActionListener{ //needs to take data
 			public void actionPerformed(ActionEvent e){
-				
+				JFrame frameSettingsFrame = new settingsFrame();
+				frameSettingsFrame.setVisible(true);
 			}
 		}
 		createComponents();
@@ -121,5 +123,8 @@ public class loginFrame extends JFrame{
 		textField_3 = new JTextField();
 		centerPanel.add(textField_3);
 		textField_3.setColumns(10);
+	}
+	public void close(){
+		this.setVisible(false);
 	}
 }

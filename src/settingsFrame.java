@@ -48,7 +48,9 @@ public class settingsFrame extends JFrame{
 		}
 		class Edit_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				
+				JFrame frameLoginFrame = new loginFrame();
+				close();
+				frameLoginFrame.setVisible(true);
 			}
 		}
 		class Logout_Listener implements ActionListener{
@@ -148,5 +150,8 @@ public class settingsFrame extends JFrame{
 		lblSettings = new JLabel("Settings");
 		panel_1.add(lblSettings);
 		getContentPane().add(panel);
+	}
+	public void close(){
+		this.setVisible(false);
 	}
 }

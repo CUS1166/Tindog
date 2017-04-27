@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.net.MalformedURLException;
 import java.awt.Component;
 
 public class MainFrame extends JFrame{
@@ -50,10 +51,17 @@ public class MainFrame extends JFrame{
 		}
 		class Back_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				JFrame frameDogListFrame = new DogListFrame();
+				JFrame frameDogListFrame;
+				try {
+					frameDogListFrame = new DogListFrame();
+					frameDogListFrame .setVisible(true);
+					frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				close();
-				frameDogListFrame .setVisible(true);
-				frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
 			}
 		}
 		

@@ -2,6 +2,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.MalformedURLException;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -43,7 +45,15 @@ public class NewUserFrame extends JFrame{
 		}
 		class submitListener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				
+				JFrame frameDogListFrame;
+				try {
+					frameDogListFrame = new DogListFrame();
+					frameDogListFrame .setVisible(true);
+					frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				} catch (MalformedURLException e1) {
+					e1.printStackTrace();
+				}
+				close();
 			}
 		}
 		createComponents();
