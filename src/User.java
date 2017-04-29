@@ -8,6 +8,7 @@ public class User
 	private String email;
 	private String phone;
 	private String password;
+	private int id;
 	
 	public User()
 	{
@@ -57,6 +58,15 @@ public class User
 	public void addDog(Dog d)
 	{
 		db.addDog(d);
+	}
+	
+	public void setID(int id)
+	{
+		this.id = id;
+	}
+	public int getID()
+	{
+		return id;
 	}
 
 }
