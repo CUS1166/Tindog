@@ -15,7 +15,7 @@ public class UniversalDogDB
 	{
 		query = q;
 		try{
-			con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/jpsun/Google Drive/Class Documents/CUS 1166/DogDatabase2.accdb");
+			con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/skrotzkn/OneDrive - St. John's University/School/Spring 2017/CUS 1166/Project/Database.accdb");
 			s = con.createStatement();
 			s.execute(query);
 			rs = s.getResultSet();
@@ -35,7 +35,7 @@ public class UniversalDogDB
 		query = q;
 		try{
 			//con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/jpsun/Google Drive/Class Documents/CUS 1166/DogDatabase2.accdb");
-			con = DriverManager.getConnection("jdbc:ucanaccess://F:/OneDrive - SJU/OneDrive - St. John's University/School/Spring 2017/CUS 1166/Project/DogDatabase Test.accdb");
+			con = DriverManager.getConnection("jdbc:ucanaccess://C:/Users/skrotzkn/OneDrive - St. John's University/School/Spring 2017/CUS 1166/Project/Database.accdb");
 			s = con.createStatement();
 			s.execute(query);
 			s.close();

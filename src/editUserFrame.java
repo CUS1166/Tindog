@@ -30,13 +30,13 @@ public class editUserFrame extends JFrame{
 	private JButton btnNewButton;
 	private JPanel centerPanel;
 	private JLabel lblNewLabel;
-	private JTextField textField;
+	private JTextField nameField;
 	private JLabel lblPassword;
-	private JTextField textField_1;
+	private JTextField passwordField;
 	private JLabel lblRetypePassword;
-	private JTextField textField_2;
+	private JTextField password_confirmField;
 	private JLabel lblPhoneNumber;
-	private JTextField textField_3;
+	private JTextField phoneField;
 	
 	public editUserFrame(){
 		class cancelListener implements ActionListener{
@@ -47,13 +47,21 @@ public class editUserFrame extends JFrame{
 		}
 		class submitListener implements ActionListener{ //needs to take data
 			public void actionPerformed(ActionEvent e){
-<<<<<<< HEAD:src/editUserFrame.java
+
+				UniversalDogDB editUser = new UniversalDogDB();
+				String name = nameField.getText();
+				String password = passwordField.getText();
+				String passconf = password_confirmField.getText();
+				String phone = phoneField.getText();
 				
-		
-=======
+				if(password.equals(passconf)){
+					//If passwords match send query
+					String query = "";
+					
+				}
+				
 				JFrame frameSettingsFrame = new settingsFrame();
 				frameSettingsFrame.setVisible(true);
->>>>>>> origin/master:src/loginFrame.java
 			}
 		}
 		createComponents();
@@ -104,30 +112,30 @@ public class editUserFrame extends JFrame{
 		lblNewLabel = new JLabel("Name: ");
 		centerPanel.add(lblNewLabel);
 		
-		textField = new JTextField();
-		centerPanel.add(textField);
-		textField.setColumns(10);
+		nameField = new JTextField();
+		centerPanel.add(nameField);
+		nameField.setColumns(10);
 		
 		lblPassword = new JLabel("Password:");
 		centerPanel.add(lblPassword);
 		
-		textField_1 = new JTextField();
-		centerPanel.add(textField_1);
-		textField_1.setColumns(10);
+		passwordField = new JTextField();
+		centerPanel.add(passwordField);
+		passwordField.setColumns(10);
 		
 		lblRetypePassword = new JLabel("Re-type Password:");
 		centerPanel.add(lblRetypePassword);
 		
-		textField_2 = new JTextField();
-		centerPanel.add(textField_2);
-		textField_2.setColumns(10);
+		password_confirmField = new JTextField();
+		centerPanel.add(password_confirmField);
+		password_confirmField.setColumns(10);
 		
 		lblPhoneNumber = new JLabel("Phone Number");
 		centerPanel.add(lblPhoneNumber);
 		
-		textField_3 = new JTextField();
-		centerPanel.add(textField_3);
-		textField_3.setColumns(10);
+		phoneField = new JTextField();
+		centerPanel.add(phoneField);
+		phoneField.setColumns(10);
 	}
 	public void close(){
 		this.setVisible(false);
