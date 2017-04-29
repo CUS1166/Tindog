@@ -2,6 +2,8 @@ import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -46,6 +48,20 @@ public class loginFrame extends JFrame{
 		}
 		class submitListener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
+				UniversalDogDB dogdb = new UniversalDogDB();
+				try{
+					//dogdb.sendData("INSERT INTO USER (USER_First_Name,USER_Last_Name,USER_Email,USER_Password)" + "VALUES('Jack', 'Fogarty','Jack69@gmail.com','itworksyay')");
+					dogdb.retrieveData("select DOG_Name from DOG_2");
+					ResultSet test = dogdb.getResultSet();
+				 while(test.next()) // Retrieve data from ResultSet
+		         {
+		             System.out.println("Name: "+test.getString(1)); //1st column of Table from database
+
+		         }
+				}catch (Exception d){
+					System.out.println(d);
+				}
+				
 				
 			}
 		}

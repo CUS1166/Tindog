@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.sql.*;
 
 
 public class StartFrame extends JFrame{
@@ -39,10 +40,64 @@ public class StartFrame extends JFrame{
 		}
 		class Login_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				JFrame frameDogListFrame = new DogListFrame();
-				close();
-				frameDogListFrame.setVisible(true);
-				frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				
+				if (Start_Username.getText().equals("") || Start_Password.getText().equals(""))
+				{
+					if(Start_Username.getText().equals("") && Start_Password.getText().equals(""))
+					{
+						lblUserName.setText("You need to enter a Username first!");
+						lblPassword.setText("You need to enter a Password first!");
+					}
+					else if(!Start_Username.getText().equals("") && Start_Password.getText().equals(""))
+					{
+						lblUserName.setText("Username: ");
+						lblPassword.setText("You need to enter a Password first!");
+					}
+					else if(Start_Username.getText().equals("") && !Start_Password.getText().equals(""))
+					{
+						lblUserName.setText("You need to enter a Username first: ");
+						lblPassword.setText("Password: ");
+					}
+						
+				}
+				else 
+				{	
+					try
+					{
+						UniversalDogDB connection = new UniversalDogDB();
+						String query = "Select * from USER where USER_Email = \"" + Start_Username.getText() +"\";";
+						connection.retrieveData(query);
+						ResultSet rs = connection.getResultSet();
+					
+						if (!rs.isBeforeFirst())
+						{
+							lblUserName.setText("Username does not exist.");
+							lblPassword.setText("Password: ");
+						
+						}
+						else
+						{
+							while(rs.next())
+							{
+								
+								if(rs.getString("USER_Password").equals(Start_Password.getText()))
+								{
+									JFrame frameDogListFrame = new DogListFrame();
+									close();
+									frameDogListFrame.setVisible(true);
+									frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+								}
+							}
+							
+							lblUserName.setText("Username: ");
+							lblPassword.setText("Incorrect Password. Please try again!");
+						}
+					}
+					catch (Exception userFailed)
+					{
+						System.out.println(userFailed);
+					}
+				}
 			}
 		}
 		
