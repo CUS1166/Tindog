@@ -19,14 +19,11 @@ public class TinDogMain
 
 		
 
-
-<<<<<<< HEAD
-=======
 		/*JFrame frameStartFrame = new StartFrame();
 		frameStartFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameStartFrame.setVisible(true);*/
 
->>>>>>> origin/master
+
 		JFrame frameStartFrame = new StartFrame();
 		frameStartFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameStartFrame.setVisible(true);
