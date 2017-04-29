@@ -7,16 +7,37 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class DoggieBagFrame extends JFrame {
 
 	private JPanel contentPane;
 	private JPanel panel;
+	
+	/*
+	 * private ActionLIstener backlistener;
+	 */
 	/**
 	 * Create the frame.
 	 */
 	public DoggieBagFrame() {
+		
+		/*
+		 * class Back_Listener implements ActionListener{
+			public void actionPerformed(ActionEvent e){
+				JFrame frameMainFrame = new MainFrame();
+				close();
+				frameMainFrame.setVisible(true);
+				frameMainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			
+			}
+		}
+		 */
+		
+		//backlistener = new Back_Listener();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -33,6 +54,7 @@ public class DoggieBagFrame extends JFrame {
 		
 		JButton button = new JButton("<--");
 		panel_1.add(button);
+		
 		
 		JPanel panel_2 = new JPanel();
 		northPanel.add(panel_2, BorderLayout.CENTER);
@@ -67,4 +89,10 @@ public class DoggieBagFrame extends JFrame {
 			dogPanel.add(dogName);
 		}
 	}
+	
+	/*
+	 * public void close(){
+		this.setVisible(false);
+	}
+	 */
 }

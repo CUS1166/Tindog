@@ -24,7 +24,7 @@ public class loginFrame extends JFrame{
 	private JPanel panel;
 	private JPanel southPanel;
 	private JPanel northPanel;
-	private JPanel panel_2;
+	private JPanel northPanel_center;
 	private Component glue;
 	private JLabel lblEditAccount;
 	private JButton btnNewButton;
@@ -74,18 +74,19 @@ public class loginFrame extends JFrame{
 		panel.add(northPanel, BorderLayout.NORTH);
 		northPanel.setLayout(new BorderLayout(0, 0));
 		
-		panel_2 = new JPanel();
-		northPanel.add(panel_2, BorderLayout.CENTER);
+		northPanel_center = new JPanel();
+		northPanel.add(northPanel_center, BorderLayout.CENTER);
 		
 		glue = Box.createGlue();
-		panel_2.add(glue);
+		northPanel_center.add(glue);
 		
 		lblEditAccount = new JLabel("Edit Account");
-		panel_2.add(lblEditAccount);
+		northPanel_center.add(lblEditAccount);
 		
 		btnNewButton = new JButton("<--");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
 		northPanel.add(btnNewButton, BorderLayout.WEST);
