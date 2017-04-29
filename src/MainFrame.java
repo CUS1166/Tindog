@@ -28,7 +28,7 @@ public class MainFrame extends JFrame{
 	private JPanel panel_north;
 	private JPanel panel_center;
 	private JPanel panel_south;
-	private JPanel panel_1;
+	private JPanel panel_north_center;
 	private Component glue;
 	private JLabel lblMainMenu;
 
@@ -36,7 +36,11 @@ public class MainFrame extends JFrame{
 
 		class SeeDoggieBag_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-
+			/*	JFrame frameDoggieBag = new DoggieBag();
+				close();
+				frameDoggieBag.setVisible(true);
+				//frameDoggieBag.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			*/
 			}
 		}
 		class Settings_Listener implements ActionListener{
@@ -49,7 +53,10 @@ public class MainFrame extends JFrame{
 		}
 		class Help_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-
+				JFrame frameHelpFrame = new HelpFrame();
+				close();
+				frameHelpFrame.setVisible(true);
+				//frameHelpFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}
 		}
 		class Back_Listener implements ActionListener{
@@ -111,14 +118,14 @@ public class MainFrame extends JFrame{
 		Main_Back = new JButton("<--");
 		panel_north.add(Main_Back, BorderLayout.WEST);
 
-		panel_1 = new JPanel();
-		panel_north.add(panel_1, BorderLayout.CENTER);
+		panel_north_center = new JPanel();
+		panel_north.add(panel_north_center, BorderLayout.CENTER);
 
 		glue = Box.createGlue();
-		panel_1.add(glue);
+		panel_north_center.add(glue);
 
 		lblMainMenu = new JLabel("Main Menu");
-		panel_1.add(lblMainMenu);
+		panel_north_center.add(lblMainMenu);
 		panel.add(panel_center, BorderLayout.CENTER);
 		panel.add(panel_south, BorderLayout.SOUTH);
 		getContentPane().add(panel);

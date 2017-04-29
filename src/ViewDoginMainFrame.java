@@ -1,5 +1,3 @@
-
-
 	
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -50,87 +48,87 @@ public class ViewDoginMainFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel = new JPanel();
-		contentPane.add(panel, BorderLayout.NORTH);
-		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		JPanel panel_north = new JPanel();
+		contentPane.add(panel_north, BorderLayout.NORTH);
+		panel_north.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		JPanel panel_7 = new JPanel();
-		panel.add(panel_7);
-		FlowLayout flowLayout_2 = (FlowLayout) panel_7.getLayout();
+		JPanel panel_north_buttonBack = new JPanel();
+		panel_north.add(panel_north_buttonBack);
+		FlowLayout flowLayout_2 = (FlowLayout) panel_north_buttonBack.getLayout();
 		flowLayout_2.setAlignment(FlowLayout.LEFT);
 		
 		JButton button = new JButton("<--");
-		panel_7.add(button);
+		panel_north_buttonBack.add(button);
 		button.addActionListener(backbtnListener);
 		
-		JPanel panel_10 = new JPanel();
-		contentPane.add(panel_10, BorderLayout.CENTER);
-		panel_10.setLayout(new BorderLayout(0, 0));
+		JPanel panel_center = new JPanel();
+		contentPane.add(panel_center, BorderLayout.CENTER);
+		panel_center.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel_8 = new JPanel();
-		panel_10.add(panel_8, BorderLayout.NORTH);
-		panel_8.setLayout(new GridLayout(0, 1, 0, 0));
+		JPanel panel_center_north = new JPanel();
+		panel_center.add(panel_center_north, BorderLayout.NORTH);
+		panel_center_north.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JLabel lblNewLabel = new JLabel("");
-		panel_8.add(lblNewLabel);
+		panel_center_north.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Name" + "");
-		panel_8.add(lblNewLabel_1);
+		JLabel lblNewLabel_name = new JLabel("Name" + "");
+		panel_center_north.add(lblNewLabel_name);
 		
-		JLabel lblNewLabel_3 = new JLabel("Breed" + "");
-		panel_8.add(lblNewLabel_3);
+		JLabel lblNewLabel_breed = new JLabel("Breed" + "");
+		panel_center_north.add(lblNewLabel_breed);
 		
-		JLabel lblNewLabel_2 = new JLabel("Location" + "");
-		panel_8.add(lblNewLabel_2);
+		JLabel lblNewLabel_location = new JLabel("Location" + "");
+		panel_center_north.add(lblNewLabel_location);
 		
-		JPanel panel_1 = new JPanel();
-		panel_10.add(panel_1);
+		JPanel panel_center_TextArea = new JPanel();
+		panel_center.add(panel_center_TextArea);
 		
 		JTextArea textArea = new JTextArea();
-		panel_1.add(textArea);
+		panel_center_TextArea.add(textArea);
 		
-		JPanel panel_9 = new JPanel();
-		contentPane.add(panel_9, BorderLayout.SOUTH);
-		panel_9.setLayout(new BorderLayout(0, 0));
+		JPanel panel_south = new JPanel();
+		contentPane.add(panel_south, BorderLayout.SOUTH);
+		panel_south.setLayout(new BorderLayout(0, 0));
 		
-		JPanel panel_2 = new JPanel();
-		panel_9.add(panel_2, BorderLayout.SOUTH);
-		panel_2.setLayout(new GridLayout(2, 0, 0, 0));
+		JPanel panel_south_south = new JPanel();
+		panel_south.add(panel_south_south, BorderLayout.SOUTH);
+		panel_south_south.setLayout(new GridLayout(2, 0, 0, 0));
 		
-		JPanel panel_4 = new JPanel();
-		panel_2.add(panel_4);
+		JPanel panel_south_south_buttonViewAdoptInfo = new JPanel();
+		panel_south_south.add(panel_south_south_buttonViewAdoptInfo);
 		
 		Component glue_1 = Box.createGlue();
-		panel_4.add(glue_1);
+		panel_south_south_buttonViewAdoptInfo.add(glue_1);
 		
 		JButton btnViewAdoptionInformation = new JButton("View Adoption Information");
-		panel_4.add(btnViewAdoptionInformation);
+		panel_south_south_buttonViewAdoptInfo.add(btnViewAdoptionInformation);
 		
-		JPanel panel_6 = new JPanel();
-		panel_2.add(panel_6);
-		panel_6.setLayout(new GridLayout(0, 2, 0, 0));
+		JPanel panel_south_south_tbd = new JPanel();
+		panel_south_south.add(panel_south_south_tbd);
+		panel_south_south_tbd.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JPanel panel_3 = new JPanel();
-		panel_6.add(panel_3);
-		FlowLayout flowLayout = (FlowLayout) panel_3.getLayout();
+		JPanel panel_south_south_tbd_buttonXmark = new JPanel();
+		panel_south_south_tbd.add(panel_south_south_tbd_buttonXmark);
+		FlowLayout flowLayout = (FlowLayout) panel_south_south_tbd_buttonXmark.getLayout();
 		flowLayout.setAlignment(FlowLayout.LEFT);
 		
 		Component glue = Box.createGlue();
-		panel_3.add(glue);
+		panel_south_south_tbd_buttonXmark.add(glue);
 		
-		JButton btnNewButton = new JButton("✖");
-		panel_3.add(btnNewButton);
+		JButton button_Xmark = new JButton("✖");
+		panel_south_south_tbd_buttonXmark.add(button_Xmark);
 		
-		JPanel panel_5 = new JPanel();
-		FlowLayout flowLayout_1 = (FlowLayout) panel_5.getLayout();
+		JPanel panel_south_south_tbd_buttoncheckmark = new JPanel();
+		FlowLayout flowLayout_1 = (FlowLayout) panel_south_south_tbd_buttoncheckmark.getLayout();
 		flowLayout_1.setAlignment(FlowLayout.RIGHT);
-		panel_6.add(panel_5);
+		panel_south_south_tbd.add(panel_south_south_tbd_buttoncheckmark);
 		
 		Component glue_2 = Box.createGlue();
-		panel_5.add(glue_2);
+		panel_south_south_tbd_buttoncheckmark.add(glue_2);
 		
-		JButton btnNewButton_1 = new JButton("✔");
-		panel_5.add(btnNewButton_1);
+		JButton button_checkmark = new JButton("✔");
+		panel_south_south_tbd_buttoncheckmark.add(button_checkmark);
 	}
 	public void close(){
 		this.setVisible(false);

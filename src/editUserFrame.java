@@ -47,13 +47,8 @@ public class editUserFrame extends JFrame{
 		}
 		class submitListener implements ActionListener{ //needs to take data
 			public void actionPerformed(ActionEvent e){
-<<<<<<< HEAD:src/editUserFrame.java
-				
-		
-=======
 				JFrame frameSettingsFrame = new settingsFrame();
 				frameSettingsFrame.setVisible(true);
->>>>>>> origin/master:src/loginFrame.java
 			}
 		}
 		createComponents();

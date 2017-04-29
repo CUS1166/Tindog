@@ -10,6 +10,7 @@ public class FilterFrame extends JFrame{
 	private static final int FRAME_WIDTH = 400;
 	private static final int FRAME_HEIGHT = 300;
 	private static final int FIELD_WIDTH = 10;
+	
 	private JButton Filter_Back;
 	private JLabel Filter_FILTER;
 	private JLabel Filter_Age;
@@ -25,7 +26,7 @@ public class FilterFrame extends JFrame{
 	private JLabel Filter_Shelters;
 	private JComboBox Shelters;
 	//Tindog Logo
-
+	
 	private ActionListener back_listener;
 	private ActionListener enterbtnListener;
 
@@ -41,7 +42,7 @@ public class FilterFrame extends JFrame{
 	private JPanel panel_shelters;
 	private JButton btnFilter;
 	private Component horizontalStrut;
-	private JPanel panel_1;
+	private JPanel panel_north_center;
 
 	public FilterFrame(){
 		class Back_Listener implements ActionListener{
@@ -136,11 +137,11 @@ public class FilterFrame extends JFrame{
 
 		panel_north.add(Filter_Back, BorderLayout.WEST);
 		
-		panel_1 = new JPanel();
-		panel_north.add(panel_1, BorderLayout.CENTER);
+		panel_north_center = new JPanel();
+		panel_north.add(panel_north_center, BorderLayout.CENTER);
 		
 				Filter_FILTER = new JLabel("FILTER");
-				panel_1.add(Filter_FILTER);
+				panel_north_center.add(Filter_FILTER);
 		panel_center.add(panel_F);
 		panel_center.add(panel_age);
 		panel_center.add(panel_breed);
