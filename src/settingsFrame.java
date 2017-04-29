@@ -33,14 +33,17 @@ public class settingsFrame extends JFrame{
 	private JPanel panel_north;
 	private JPanel panel_center;
 	private JButton button;
-	private JPanel panel_1;
+	private JPanel panel_north_center;
 	private Component glue;
 	private JLabel lblSettings;
 	
 	public settingsFrame(){
 		class About_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				
+				JFrame frameAboutFrame = new AboutFrame();
+				close();
+				frameAboutFrame.setVisible(true);
+				//frameAboutFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			}
 		}
 		class Edit_Listener implements ActionListener{
@@ -62,7 +65,12 @@ public class settingsFrame extends JFrame{
 		}
 		class Back_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				
+				/*
+				 * JFrame frameMainFrame = new MainFrame();
+				 * close();
+				 * frameMainFrame.setVisible(true);
+				 * fraemMainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				 */
 			}
 		}
 		
@@ -81,8 +89,8 @@ public class settingsFrame extends JFrame{
 		Settings_DeleteAccount.addActionListener(deleteaccount_listener);
 		
 
-		createcosa();
-		createPanel();
+		createcosa();// do these need to be here?
+		createPanel();//do these need to be here?
 		
 
 		createPanel();
@@ -126,14 +134,14 @@ public class settingsFrame extends JFrame{
 		button = new JButton("←");
 		panel_north.add(button, BorderLayout.WEST);
 		
-		panel_1 = new JPanel();
-		panel_north.add(panel_1, BorderLayout.CENTER);
+		panel_north_center = new JPanel();
+		panel_north.add(panel_north_center, BorderLayout.CENTER);
 		
 		glue = Box.createGlue();
-		panel_1.add(glue);
+		panel_north_center.add(glue);
 		
 		lblSettings = new JLabel("Settings");
-		panel_1.add(lblSettings);
+		panel_north_center.add(lblSettings);
 		getContentPane().add(panel);
 	}
 	public void close(){

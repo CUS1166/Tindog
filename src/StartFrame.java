@@ -3,6 +3,7 @@ import java.sql.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.net.MalformedURLException;
 
 
 public class StartFrame extends JFrame{
@@ -23,7 +24,7 @@ public class StartFrame extends JFrame{
 	private JPanel panel_center;
 	private JLabel lblUserName;
 	private JLabel lblPassword;
-	private JPanel panel_1;
+	private JPanel panel_north;
 	private JLabel lblWelcomeToTindog;
 	
 	
@@ -63,11 +64,18 @@ public class StartFrame extends JFrame{
 					result = dogDB.getResultSet();*/
 				}
 				
+				//should a ActionListener Class be here?
+				JFrame frameDogListFrame;
+				try {
+					frameDogListFrame = new DogListFrame();
+					close();
+					frameDogListFrame.setVisible(true);
+					frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
-				JFrame frameDogListFrame = new DogListFrame();
-				close();
-				frameDogListFrame.setVisible(true);
-				frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				
 			}
 		}
@@ -109,11 +117,11 @@ public class StartFrame extends JFrame{
 		panel.add(panel_center, BorderLayout.CENTER);
 		getContentPane().add(panel);
 		
-		panel_1 = new JPanel();
-		panel.add(panel_1, BorderLayout.NORTH);
+		panel_north = new JPanel();
+		panel.add(panel_north, BorderLayout.NORTH);
 		
 		lblWelcomeToTindog = new JLabel("Welcome to TinDog");
-		panel_1.add(lblWelcomeToTindog);
+		panel_north.add(lblWelcomeToTindog);
 	}
 	public void close(){
 		this.setVisible(false);

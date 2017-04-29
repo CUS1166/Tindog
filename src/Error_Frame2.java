@@ -54,4 +54,7 @@ public class Error_Frame2 extends JFrame{
 		panel.add(panel_center, BorderLayout.CENTER);
 		add(panel);
 	}
+	public void close(){
+		this.setVisible(false);
+	}
 }

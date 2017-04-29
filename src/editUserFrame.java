@@ -24,13 +24,18 @@ public class editUserFrame extends JFrame{
 	private JPanel panel;
 	private JPanel southPanel;
 	private JPanel northPanel;
-	private JPanel panel_2;
+	private JPanel northPanel_center;
 	private Component glue;
 	private JLabel lblEditAccount;
-	private JButton btnNewButton;
+	private JButton button_back;
 	private JPanel centerPanel;
+
 	private JLabel lblNewLabel;
 	private JTextField nameField;
+
+	private JLabel label_name;
+	private JTextField textField;
+
 	private JLabel lblPassword;
 	private JTextField passwordField;
 	private JLabel lblRetypePassword;
@@ -89,28 +94,28 @@ public class editUserFrame extends JFrame{
 		panel.add(northPanel, BorderLayout.NORTH);
 		northPanel.setLayout(new BorderLayout(0, 0));
 		
-		panel_2 = new JPanel();
-		northPanel.add(panel_2, BorderLayout.CENTER);
+		northPanel_center = new JPanel();
+		northPanel.add(northPanel_center, BorderLayout.CENTER);
 		
 		glue = Box.createGlue();
-		panel_2.add(glue);
+		northPanel_center.add(glue);
 		
 		lblEditAccount = new JLabel("Edit Account");
-		panel_2.add(lblEditAccount);
+		northPanel_center.add(lblEditAccount);
 		
-		btnNewButton = new JButton("<--");
-		btnNewButton.addActionListener(new ActionListener() {
+		button_back = new JButton("<--");
+		button_back.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
-		northPanel.add(btnNewButton, BorderLayout.WEST);
+		northPanel.add(button_back, BorderLayout.WEST);
 		
 		centerPanel = new JPanel();
 		panel.add(centerPanel, BorderLayout.CENTER);
 		centerPanel.setLayout(new GridLayout(8, 1, 0, 0));
 		
-		lblNewLabel = new JLabel("Name: ");
-		centerPanel.add(lblNewLabel);
+		label_name = new JLabel("Name: ");
+		centerPanel.add(label_name);
 		
 		nameField = new JTextField();
 		centerPanel.add(nameField);
