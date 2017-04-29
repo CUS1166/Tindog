@@ -24,12 +24,6 @@ public class DogListFrame extends JFrame {
 	private ActionListener viewInfobtnListener;
 	public DogListFrame() throws MalformedURLException {
 		
-		@SuppressWarnings("unused")
-		class fakeListener implements ActionListener{
-			public void actionPerformed(ActionEvent e){
-				
-			}
-		}
 		class mainMenuListener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
 				JFrame frameMainMenuFrame = new MainFrame();
