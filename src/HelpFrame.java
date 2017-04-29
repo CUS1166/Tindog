@@ -27,11 +27,11 @@ public class HelpFrame extends JFrame{
 		
 		class Back_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				/*JFrame frameMainFrame = new MainFrame();
-				close();
-				frameMainFrame.setVisible(true);
+				//JFrame frameMainFrame = new MainFrame();
+				//close();
+				//frameMainFrame.setVisible(true);
 				//frameMainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				*/
+				
 			}
 		}
 

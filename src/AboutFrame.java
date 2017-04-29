@@ -27,11 +27,11 @@ public class AboutFrame extends JFrame{
 		
 		class Back_Listener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-			/*	JFrame frameSettingsFrame = new settingsFrame();
+				JFrame frameSettingsFrame = new settingsFrame();
 				close();
 				frameSettingsFrame.setVisible(true);
 				frameSettingsFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			*/
+			
 			}
 		}
 
