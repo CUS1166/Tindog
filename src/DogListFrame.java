@@ -27,10 +27,10 @@ public class DogListFrame extends JFrame {
 		
 		class mainMenuListener implements ActionListener{
 			public void actionPerformed(ActionEvent e){
-				JFrame frameMainMenuFrame = new MainFrame();
+				/*JFrame frameMainMenuFrame = new MainFrame();
 				close();
 				frameMainMenuFrame.setVisible(true);
-				frameMainMenuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				frameMainMenuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
 			}
 		}
 		class filterListener implements ActionListener{

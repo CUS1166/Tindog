@@ -3,6 +3,7 @@ import java.sql.*;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.net.MalformedURLException;
 
 
 public class StartFrame extends JFrame{
@@ -64,10 +65,17 @@ public class StartFrame extends JFrame{
 				}
 				
 				//should a ActionListener Class be here?
-				JFrame frameDogListFrame = new DogListFrame();
-				close();
-				frameDogListFrame.setVisible(true);
-				frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				JFrame frameDogListFrame;
+				try {
+					frameDogListFrame = new DogListFrame();
+					close();
+					frameDogListFrame.setVisible(true);
+					frameDogListFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				} catch (MalformedURLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 				
 			}
 		}
