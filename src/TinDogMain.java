@@ -9,7 +9,7 @@ import java.sql.*;
 public class TinDogMain
 {
 	private static ActionListener nuca_listener;
-	//private ActionListener login_listener;
+	private ActionListener login_listener;
 	public static void main(String[] args)
 	{
 
